@@ -5,9 +5,17 @@ import utc from 'dayjs/plugin/utc';
 import {colors, Badge, Text} from '../common';
 import {SmileTwoTone, StarFilled} from '../icons';
 import {formatRelativeTime} from '../../utils';
-import {Conversation, Message} from '../../types';
+import {Conversation, Message, User} from '../../types';
 
 dayjs.extend(utc);
+
+const getOwner = (user?: User) => {
+  let owner = user ? 'Operador' : 'Anônimo'
+  if (user?.email) owner = user?.email.split('@')[0]
+  if (user?.full_name) owner = user?.full_name
+  if (user?.display_name) owner = user?.display_name
+  return owner
+}
 
 const formatConversation = (
   conversation: Conversation,
@@ -17,11 +25,12 @@ const formatConversation = (
   const ts = recent ? recent.created_at : conversation.created_at;
   const created = dayjs.utc(ts);
   const date = formatRelativeTime(created);
+  const owner = getOwner(recent.user);
 
   return {
     ...conversation,
     date: date || '1d', // TODO
-    preview: recent && recent.body ? recent.body : '...',
+    preview: `${owner}: ${recent && recent.body ? recent.body : '...'}`,
     messages: messages,
   };
 };
