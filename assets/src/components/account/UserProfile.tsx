@@ -167,8 +167,8 @@ class UserProfile extends React.Component<Props, State> {
         <Box mb={3} sx={{maxWidth: 480}}>
         <Paragraph>
             Essas informações irá afetar como você aparece no chat. Seu nome
-            de exibição será priorizado primeiro, mas se o nome exibição
-            não estiver preenchido, seu nome completo ou email será utilizado.
+            de exibição será priorizado primeiro, mas se o nome exibição não
+            estiver preenchido, seu nome completo ou email será utilizado ao invés.
           </Paragraph>
         </Box>
 

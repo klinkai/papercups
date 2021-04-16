@@ -249,13 +249,13 @@ const Dashboard = (props: RouteComponentProps) => {
               <Menu.SubMenu
                 key="account"
                 icon={<UserOutlined />}
-                title="Conta"
+                title="Account"
               >
                 <Menu.Item key="overview">
                   <Link to="/account/overview">Overview</Link>
                 </Menu.Item>
                 <Menu.Item key="profile">
-                  <Link to="/account/profile">Meu Perfil</Link>
+                  <Link to="/account/profile">My Perfil</Link>
                 </Menu.Item>
                 <Menu.Item key="getting-started">
                   <Link to="/account/getting-started">Getting started</Link>
@@ -382,10 +382,10 @@ const Dashboard = (props: RouteComponentProps) => {
               <Menu.SubMenu
                 key="account"
                 icon={<UserOutlined />}
-                title="Account"
+                title="Conta"
               >
                 <Menu.Item key="profile">
-                  <Link to="/account/profile">My Profile</Link>
+                  <Link to="/account/profile">Meu Perfil</Link>
                 </Menu.Item>
               </Menu.SubMenu>
               <Menu.SubMenu
