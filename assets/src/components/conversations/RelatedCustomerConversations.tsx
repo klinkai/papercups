@@ -115,7 +115,7 @@ const RelatedCustomerConversations = ({
   } else if (conversationsWithMessages.length === 0) {
     return (
       <Box mx={2} mb={2}>
-        <Text type="secondary">None</Text>
+        <Text type="secondary">Nenhuma</Text>
       </Box>
     );
   }

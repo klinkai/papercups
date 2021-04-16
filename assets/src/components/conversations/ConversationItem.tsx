@@ -6,16 +6,9 @@ import {colors, Badge, Text} from '../common';
 import {SmileTwoTone, StarFilled} from '../icons';
 import {formatRelativeTime} from '../../utils';
 import {Conversation, Message, User} from '../../types';
+import { getSenderIdentifier } from './ChatMessage';
 
 dayjs.extend(utc);
-
-const getOwner = (user?: User) => {
-  let owner = user ? 'Operador' : 'Anônimo'
-  if (user?.email) owner = user?.email.split('@')[0]
-  if (user?.full_name) owner = user?.full_name
-  if (user?.display_name) owner = user?.display_name
-  return owner
-}
 
 const formatConversation = (
   conversation: Conversation,
@@ -25,7 +18,7 @@ const formatConversation = (
   const ts = recent ? recent.created_at : conversation.created_at;
   const created = dayjs.utc(ts);
   const date = formatRelativeTime(created);
-  const owner = getOwner(recent.user);
+  const owner = getSenderIdentifier(null, recent.user);
 
   return {
     ...conversation,
@@ -87,7 +80,7 @@ const ConversationItem = ({
               overflow: 'hidden',
             }}
           >
-            {name || email || 'Anonymous User'}
+            {name || email || 'Usuário Anônimo'}
           </Text>
         </Flex>
 

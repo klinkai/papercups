@@ -18,13 +18,13 @@ export const getSenderIdentifier = (
   if (user) {
     const {display_name, full_name, email} = user;
 
-    return display_name || full_name || email || 'Agent';
+    return display_name || full_name || email || 'Operador';
   } else if (customer) {
     const {name, email} = customer;
 
-    return name || email || 'Anonymous User';
+    return name || email || 'Usuário Anônimo';
   } else {
-    return 'Anonymous User';
+    return 'Usuário Anônimo';
   }
 };
 
@@ -156,9 +156,9 @@ const ChatMessage = ({
         {shouldDisplayTimestamp && (
           <Flex m={1} sx={{justifyContent: 'flex-end'}}>
             {formattedSeenAt ? (
-              <Text type="secondary">Seen {formattedSeenAt}</Text>
+              <Text type="secondary">Enviado {formattedSeenAt}</Text>
             ) : (
-              <Text type="secondary">Sent {formattedSentAt}</Text>
+              <Text type="secondary">Enviado {formattedSentAt}</Text>
             )}
           </Flex>
         )}
@@ -188,7 +188,7 @@ const ChatMessage = ({
       </Flex>
       {shouldDisplayTimestamp && (
         <Flex my={1} mx={2} pl={4} sx={{justifyContent: 'flex-start'}}>
-          <Text type="secondary">Sent {formattedSentAt}</Text>
+          <Text type="secondary">Enviado {formattedSentAt}</Text>
         </Flex>
       )}
     </Box>

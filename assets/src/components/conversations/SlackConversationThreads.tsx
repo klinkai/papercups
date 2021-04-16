@@ -34,7 +34,7 @@ const SlackConversationThreads = ({
   if (loading) {
     return <Spinner size={16} />;
   } else if (!threads || !threads.length) {
-    return <Text type="secondary">None</Text>;
+    return <Text type="secondary">Nenhum</Text>;
   }
 
   return (

@@ -51,7 +51,7 @@ const AttachFileButton = ({
       fileList={fileList}
     >
       <Button icon={<PaperClipOutlined />} size="small">
-        Attach a file
+        Anexar arquivo
       </Button>
     </Upload>
   );
@@ -158,13 +158,13 @@ const ConversationFooter = ({
                   key="reply"
                   style={{padding: '0 4px', marginRight: 20}}
                 >
-                  Reply
+                  Responder
                 </Menu.Item>
                 <Menu.Item
                   key="note"
                   style={{padding: '0 4px', marginRight: 20}}
                 >
-                  Note
+                  Anotação
                 </Menu.Item>
               </Menu>
             </Box>
@@ -176,8 +176,8 @@ const ConversationFooter = ({
                 className="TextArea--transparent"
                 placeholder={
                   isPrivateNote
-                    ? 'Type a private note here'
-                    : 'Type your reply here'
+                    ? 'Escreva uma anotação privada aqui'
+                    : 'Escreva sua resposta aqui'
                 }
                 autoSize={{minRows: 2, maxRows: 4}}
                 autoFocus
@@ -205,7 +205,7 @@ const ConversationFooter = ({
                   htmlType="submit"
                   disabled={isSendDisabled}
                 >
-                  Send
+                  Enviar
                 </Button>
               </Flex>
             ) : (
@@ -215,7 +215,7 @@ const ConversationFooter = ({
                   htmlType="submit"
                   disabled={isSendDisabled}
                 >
-                  Send
+                  Enviar
                 </Button>
               </Flex>
             )}

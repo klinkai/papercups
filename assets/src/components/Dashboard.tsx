@@ -274,7 +274,7 @@ const Dashboard = (props: RouteComponentProps) => {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <Box mr={2}>All conversations</Box>
+                      <Box mr={2}>Todas conversas</Box>
                       <Badge
                         count={unread.all}
                         style={{borderColor: '#FF4D4F'}}
@@ -290,7 +290,7 @@ const Dashboard = (props: RouteComponentProps) => {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <Box mr={2}>Assigned to me</Box>
+                      <Box mr={2}>Atribuídas para mim</Box>
                       <Badge
                         count={unread.mine}
                         style={{borderColor: '#FF4D4F'}}
@@ -306,7 +306,7 @@ const Dashboard = (props: RouteComponentProps) => {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <Box mr={2}>Prioritized</Box>
+                      <Box mr={2}>Com prioridades</Box>
                       <Badge
                         count={unread.priority}
                         style={{borderColor: '#FF4D4F'}}
@@ -315,7 +315,7 @@ const Dashboard = (props: RouteComponentProps) => {
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="closed">
-                  <Link to="/conversations/closed">Closed</Link>
+                  <Link to="/conversations/closed">Encerradas</Link>
                 </Menu.Item>
               </Menu.SubMenu>
               <Menu.SubMenu
@@ -401,7 +401,7 @@ const Dashboard = (props: RouteComponentProps) => {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <Box mr={2}>All conversations</Box>
+                      <Box mr={2}>Todas conversas</Box>
                       <Badge
                         count={unread.all}
                         style={{borderColor: '#FF4D4F'}}
@@ -417,7 +417,7 @@ const Dashboard = (props: RouteComponentProps) => {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <Box mr={2}>Assigned to me</Box>
+                      <Box mr={2}>Atribuídas para mim</Box>
                       <Badge
                         count={unread.mine}
                         style={{borderColor: '#FF4D4F'}}
@@ -433,7 +433,7 @@ const Dashboard = (props: RouteComponentProps) => {
                         justifyContent: 'space-between',
                       }}
                     >
-                      <Box mr={2}>Prioritized</Box>
+                      <Box mr={2}>Com prioridades</Box>
                       <Badge
                         count={unread.priority}
                         style={{borderColor: '#FF4D4F'}}
@@ -442,7 +442,7 @@ const Dashboard = (props: RouteComponentProps) => {
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="closed">
-                  <Link to="/conversations/closed">Closed</Link>
+                  <Link to="/conversations/closed">Encerradas</Link>
                 </Menu.Item>
               </Menu.SubMenu>
             </Menu>

@@ -23,15 +23,15 @@ export const formatRelativeTime = (date: dayjs.Dayjs) => {
   const days = Math.floor(hrs / 24);
 
   if (seconds < 10) {
-    return 'just now';
+    return 'neste momento';
   } else if (seconds < 60) {
-    return `${seconds} seconds ago`;
+    return `${seconds} segundos atrás`;
   } else if (mins <= 60) {
-    return `${mins} minute${mins === 1 ? '' : 's'} ago`;
+    return `${mins} minuto${mins === 1 ? '' : 's'} atrás`;
   } else if (hrs <= 24) {
-    return `${hrs} hour${hrs === 1 ? '' : 's'} ago`;
+    return `${hrs} hora${hrs === 1 ? '' : 's'} atrás`;
   } else {
-    return `${days} day${days === 1 ? '' : 's'} ago`;
+    return `${days} dia${days === 1 ? '' : 's'} atrás`;
   }
 };
 

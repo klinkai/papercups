@@ -196,7 +196,7 @@ export const CustomerDetails = ({
           mb={2}
           sx={{justifyContent: 'space-between', alignItems: 'baseline'}}
         >
-          <Text strong>{name || 'Anonymous User'}</Text>
+          <Text strong>{name || 'Usuário Anônimo'}</Text>
 
           <Popover
             placement="left"
@@ -211,7 +211,7 @@ export const CustomerDetails = ({
                 </Button>
               </Box>
             }
-            title="Export customer data as JSON"
+            title="Exportar dados do cliente em JSON"
           >
             <Box>
               <InfoCircleOutlined
@@ -223,11 +223,11 @@ export const CustomerDetails = ({
 
         <Flex mb={1} sx={{alignItems: 'center'}}>
           <MailOutlined style={{color: colors.primary}} />
-          <Box ml={2}>{email || 'Unknown'}</Box>
+          <Box ml={2}>{email || 'Desconhecido'}</Box>
         </Flex>
         <Flex mb={1} sx={{alignItems: 'center'}}>
           <PhoneOutlined style={{color: colors.primary}} />
-          <Box ml={2}>{phone || 'Unknown'}</Box>
+          <Box ml={2}>{phone || 'Desconhecido'}</Box>
         </Flex>
         <Flex mb={1} sx={{alignItems: 'center'}}>
           <UserOutlined style={{color: colors.primary}} />
@@ -251,13 +251,13 @@ export const CustomerDetails = ({
       {isOnline ? (
         <DetailsSectionCard>
           <Flex mb={2} sx={{justifyContent: 'space-between'}}>
-            <Text strong>Last seen</Text>
+            <Text strong>Última vez visto</Text>
             <Badge status="processing" text="Online now" />
           </Flex>
           <Box mb={2}>
             <CustomerActiveSessions customerId={customerId} />
           </Box>
-          <Text type="secondary">Session started at</Text>
+          <Text type="secondary">Sessão iniciou em</Text>
           <Box mb={1}>
             {lastSeenUrl ? (
               <Tooltip title={lastSeenUrl}>
@@ -266,21 +266,21 @@ export const CustomerDetails = ({
                 </a>
               </Tooltip>
             ) : (
-              <Text>Unknown URL</Text>
+              <Text>URL Desconhecida</Text>
             )}
           </Box>
         </DetailsSectionCard>
       ) : (
         <DetailsSectionCard>
           <Box mb={2}>
-            <Text strong>Last seen</Text>
+            <Text strong>Ultima vez visto</Text>
           </Box>
           <Box mb={1}>
             <CalendarOutlined />{' '}
             {lastUpdatedAt
-              ? dayjs.utc(lastUpdatedAt).format('MMMM DD, YYYY')
+              ? dayjs.utc(lastUpdatedAt).format('DD/MM/YYYY')
               : 'N/A'}{' '}
-            <Text type="secondary">at</Text>
+            <Text type="secondary">em</Text>
           </Box>
           <Box mb={1}>
             {lastSeenUrl ? (
@@ -290,7 +290,7 @@ export const CustomerDetails = ({
                 </a>
               </Tooltip>
             ) : (
-              <Text>Unknown URL</Text>
+              <Text>URL DesconhecidaL</Text>
             )}
           </Box>
         </DetailsSectionCard>
@@ -298,11 +298,11 @@ export const CustomerDetails = ({
 
       <DetailsSectionCard>
         <Box mb={2}>
-          <Text strong>First seen</Text>
+          <Text strong>Primeira vez visto</Text>
         </Box>
         <Box>
           <CalendarOutlined />{' '}
-          {createdAt ? dayjs.utc(createdAt).format('MMMM DD, YYYY') : 'N/A'}
+          {createdAt ? dayjs.utc(createdAt).format('DD/MM/YYYY') : 'N/A'}
         </Box>
       </DetailsSectionCard>
 
@@ -324,7 +324,7 @@ export const CustomerDetails = ({
 
       <DetailsSectionCard>
         <Box mb={2}>
-          <Text strong>Device</Text>
+          <Text strong>Dispositivo</Text>
         </Box>
         {formattedTimezone && (
           <Box mb={1}>
@@ -332,10 +332,10 @@ export const CustomerDetails = ({
           </Box>
         )}
         <Box mb={1}>
-          {[os, browser].filter(Boolean).join(' · ') || 'Unknown'}
+          {[os, browser].filter(Boolean).join(' · ') || 'Desconhecido'}
         </Box>
         <Box mb={1}>
-          <Text type="secondary">IP:</Text> {lastIpAddress || 'Unknown'}
+          <Text type="secondary">IP:</Text> {lastIpAddress || 'Desconhecido'}
         </Box>
       </DetailsSectionCard>
 
@@ -343,7 +343,7 @@ export const CustomerDetails = ({
 
       <DetailsSectionCard>
         <Box mb={2}>
-          <Text strong>Customer Notes</Text>
+          <Text strong>Anotação para Cliente</Text>
         </Box>
 
         <SidebarCustomerNotes customerId={customerId} />
@@ -351,7 +351,7 @@ export const CustomerDetails = ({
 
       <DetailsSectionCard>
         <Box mb={2}>
-          <Text strong>Customer Tags</Text>
+          <Text strong>Cliente Tags</Text>
         </Box>
         <SidebarCustomerTags customerId={customerId} />
       </DetailsSectionCard>
@@ -370,7 +370,7 @@ export const CustomerDetailsSection = ({
     <Box px={2} py={3}>
       <Box px={2} mb={3}>
         <Link to={`/customers/${customer.id}`}>
-          <Text strong>Customer details</Text>
+          <Text strong>Detalhes do Cliente</Text>
         </Link>
       </Box>
 
@@ -396,14 +396,14 @@ const autoSelectAndCopyInput = (el: any) => {
 
 const openShareConversationUrlNotification = (url: string) => {
   return notification.open({
-    message: 'Share this conversation',
+    message: 'Compartilhar esta conversa',
     description: (
       <Box>
-        <Paragraph>Use the URL below to share this conversation.</Paragraph>
+        <Paragraph>Use a URL abaixo para compartilhar esta conversa.</Paragraph>
         <Box mb={3}>
           <Input type="text" value={url} onFocus={autoSelectAndCopyInput} />
         </Box>
-        <Text type="secondary">This link will only be valid for 24 hours.</Text>
+        <Text type="secondary">Esse link é válido por apenas 24 horas.</Text>
       </Box>
     ),
     duration: null,
@@ -428,7 +428,7 @@ const ConversationDetails = ({conversation}: {conversation: Conversation}) => {
   return (
     <Box px={2} py={3} sx={{borderTop: '1px solid rgba(0,0,0,.06)'}}>
       <Box px={2} mb={3}>
-        <Text strong>Conversation details</Text>
+        <Text strong>Detalhes da Conversa</Text>
       </Box>
 
       <Box
@@ -458,14 +458,14 @@ const ConversationDetails = ({conversation}: {conversation: Conversation}) => {
 
       <DetailsSectionCard>
         <Box mb={2}>
-          <Text strong>Conversation Tags</Text>
+          <Text strong>Tags da Conversa</Text>
         </Box>
         <SidebarConversationTags conversationId={conversationId} />
       </DetailsSectionCard>
 
       <DetailsSectionCard>
         <Box mb={2}>
-          <Text strong>Latest conversations</Text>
+          <Text strong>Últimas conversas</Text>
         </Box>
         <Box mx={-2} mb={-2}>
           <RelatedCustomerConversations conversationId={conversationId} />
@@ -474,14 +474,14 @@ const ConversationDetails = ({conversation}: {conversation: Conversation}) => {
 
       <DetailsSectionCard>
         <Box mb={2}>
-          <Text strong>Slack threads</Text>
+          <Text strong>Tópicos no Slack</Text>
         </Box>
         <SlackConversationThreads conversationId={conversationId} />
       </DetailsSectionCard>
 
       <Box px={2} mt={3} mb={3}>
         <Button type="primary" block ghost onClick={share}>
-          Share conversation
+          Compartilhar conversa
         </Button>
       </Box>
     </Box>

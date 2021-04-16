@@ -34,7 +34,7 @@ const ClosedConversations = () => {
   return (
     <ConversationsDashboard
       loading={loading}
-      title="Closed"
+      title="Encerradas"
       account={account}
       conversationIds={closed}
       messagesByConversation={messagesByConversation}

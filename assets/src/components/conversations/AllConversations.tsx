@@ -24,7 +24,7 @@ const AllConversations = () => {
   return (
     <ConversationsDashboard
       loading={loading}
-      title="All conversations"
+      title="Todas conversas"
       account={account}
       conversationIds={all}
       messagesByConversation={messagesByConversation}

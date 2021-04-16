@@ -70,7 +70,7 @@ const SidebarCustomerNotes = ({customerId}: {customerId: string}) => {
       <Box mb={2} sx={{bg: 'rgba(254,237,175,.4)'}}>
         <TextArea
           style={{background: 'transparent'}}
-          placeholder="Add a note"
+          placeholder="Adicionar uma anotação"
           autoSize={{maxRows: 4}}
           disabled={loading}
           value={currentNote}
@@ -88,9 +88,9 @@ const SidebarCustomerNotes = ({customerId}: {customerId: string}) => {
           return (
             <Popconfirm
               key={note.id}
-              title="Delete this note?"
-              okText="Yes"
-              cancelText="No"
+              title="Apagar essa anotação?"
+              okText="Sim"
+              cancelText="Não"
               placement="left"
               onConfirm={() => handleDeleteNote(note)}
             >

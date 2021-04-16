@@ -14,8 +14,8 @@ const EmptyMessagesPlaceholder = () => {
     <Box my={4}>
       <Result
         status="success"
-        title="No messages"
-        subTitle="Nothing to show here! Take a well-earned break 😊"
+        title="Sem mensagens"
+        subTitle="Nada para mostrar aqui! Faça uma pausa 😊"
       />
     </Box>
   );
@@ -151,7 +151,7 @@ const ConversationMessages = ({
                 loading={isLoadingPreviousConversation}
                 onClick={handleLoadPrevious}
               >
-                Load previous conversation
+                Carregar conversas anteriores
               </Button>
             </Flex>
           ) : (
