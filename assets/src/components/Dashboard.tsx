@@ -239,24 +239,8 @@ const Dashboard = (props: RouteComponentProps) => {
     }
   }, [currentUser]);
 
-  return (
-    <Layout>
-      <DashboardHtmlHead totalNumUnread={totalNumUnread} />
-
-      <Sider
-        width={220}
-        collapsed={false}
-        style={{
-          overflow: 'auto',
-          height: '100vh',
-          position: 'fixed',
-          left: 0,
-          color: colors.white,
-        }}
-      >
-        <Flex sx={{flexDirection: 'column', height: '100%'}}>
-          <Box py={3} sx={{flex: 1}}>
-            <Menu
+  const adminMenu = (
+    <Menu
               selectedKeys={[section, key]}
               defaultOpenKeys={[section, 'conversations']}
               mode="inline"
@@ -386,6 +370,102 @@ const Dashboard = (props: RouteComponentProps) => {
                 </Menu.Item>
               )}
             </Menu>
+  )
+
+  const userMenu = (
+    <Menu
+              selectedKeys={[section, key]}
+              defaultOpenKeys={[section, 'conversations']}
+              mode="inline"
+              theme="dark"
+            >
+              <Menu.SubMenu
+                key="account"
+                icon={<UserOutlined />}
+                title="Account"
+              >
+                <Menu.Item key="profile">
+                  <Link to="/account/profile">My Profile</Link>
+                </Menu.Item>
+              </Menu.SubMenu>
+              <Menu.SubMenu
+                key="conversations"
+                icon={<MailOutlined />}
+                title="Inbox"
+              >
+                <Menu.Item key="all">
+                  <Link to="/conversations/all">
+                    <Flex
+                      sx={{
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <Box mr={2}>All conversations</Box>
+                      <Badge
+                        count={unread.all}
+                        style={{borderColor: '#FF4D4F'}}
+                      />
+                    </Flex>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="me">
+                  <Link to="/conversations/me">
+                    <Flex
+                      sx={{
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <Box mr={2}>Assigned to me</Box>
+                      <Badge
+                        count={unread.mine}
+                        style={{borderColor: '#FF4D4F'}}
+                      />
+                    </Flex>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="priority">
+                  <Link to="/conversations/priority">
+                    <Flex
+                      sx={{
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <Box mr={2}>Prioritized</Box>
+                      <Badge
+                        count={unread.priority}
+                        style={{borderColor: '#FF4D4F'}}
+                      />
+                    </Flex>
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="closed">
+                  <Link to="/conversations/closed">Closed</Link>
+                </Menu.Item>
+              </Menu.SubMenu>
+            </Menu>
+  )
+
+  return (
+    <Layout>
+      <DashboardHtmlHead totalNumUnread={totalNumUnread} />
+
+      <Sider
+        width={220}
+        collapsed={false}
+        style={{
+          overflow: 'auto',
+          height: '100vh',
+          position: 'fixed',
+          left: 0,
+          color: colors.white,
+        }}
+      >
+        <Flex sx={{flexDirection: 'column', height: '100%'}}>
+          <Box py={3} sx={{flex: 1}}>
+            {currentUser?.role === 'admin' ? adminMenu : userMenu}
           </Box>
 
           <Box py={3}>
