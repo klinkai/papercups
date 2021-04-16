@@ -43,6 +43,12 @@ import logger from '../../logger';
 // TODO: create date utility methods so we don't have to do this everywhere
 dayjs.extend(utc);
 
+const getStatusText = (status: string | undefined) => {
+  if (status === 'open') return 'aberto';
+  if (status === 'closed') return 'encerrado';
+  return status;
+}
+
 const DetailsSectionCard = ({children}: {children: any}) => {
   return (
     <Box
@@ -252,7 +258,7 @@ export const CustomerDetails = ({
         <DetailsSectionCard>
           <Flex mb={2} sx={{justifyContent: 'space-between'}}>
             <Text strong>Última vez visto</Text>
-            <Badge status="processing" text="Online now" />
+            <Badge status="processing" text="Online" />
           </Flex>
           <Box mb={2}>
             <CustomerActiveSessions customerId={customerId} />
@@ -449,7 +455,7 @@ const ConversationDetails = ({conversation}: {conversation: Conversation}) => {
       <Box px={2} mb={1}>
         <Text type="secondary">Status:</Text>{' '}
         <Tag color={status === 'open' ? colors.primary : colors.red}>
-          {status}
+          {getStatusText(status)}
         </Tag>
       </Box>
       <Box px={2} mb={3}>
