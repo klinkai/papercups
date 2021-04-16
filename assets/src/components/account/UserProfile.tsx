@@ -162,36 +162,36 @@ class UserProfile extends React.Component<Props, State> {
 
     return (
       <Box p={4}>
-        <Title level={3}>My Profile</Title>
+        <Title level={3}>Meu Perfil</Title>
 
         <Box mb={3} sx={{maxWidth: 480}}>
-          <Paragraph>
-            This information will affect how you appear in the chat. Your
-            display name will be prioritized first, but if no display name is
-            provided, your full name or email will be used instead.
+        <Paragraph>
+            Essas informações irá afetar como você aparece no chat. Seu nome
+            de exibição será priorizado primeiro, mas se o nome exibição não
+            estiver preenchido, seu nome completo ou email será utilizado ao invés.
           </Paragraph>
         </Box>
 
         <Box mb={3} sx={{maxWidth: 480}}>
-          <label htmlFor="full_name">Full name:</label>
+          <label htmlFor="full_name">Nome completo:</label>
           <Input
             id="full_name"
             type="text"
             value={fullName}
             onChange={this.handleChangeFullName}
-            placeholder="What's your name?"
+            placeholder="Qual é o seu nome?"
             disabled={!isEditing}
           />
         </Box>
 
         <Box mb={3} sx={{maxWidth: 480}}>
-          <label htmlFor="display_name">Display name:</label>
+          <label htmlFor="display_name">Nome de exibição:</label>
           <Input
             id="display_name"
             type="text"
             value={displayName}
             onChange={this.handleChangeDisplayName}
-            placeholder="How would you like your name to be displayed?"
+            placeholder="Como você gostaria de ser chamado?"
             disabled={!isEditing}
           />
         </Box>
@@ -209,13 +209,13 @@ class UserProfile extends React.Component<Props, State> {
 
         <Flex sx={{alignItems: 'center'}}>
           <Box mb={3} mr={3} sx={{maxWidth: 480, flex: 1}}>
-            <label htmlFor="profile_photo_url">Profile image URL:</label>
+            <label htmlFor="profile_photo_url">URL da Imagem de Perfil:</label>
             <Input
               id="profile_photo_url"
               type="text"
               value={profilePhotoUrl}
               onChange={this.handleChangeProfilePhotoUrl}
-              placeholder="Enter an image URL for your profile photo"
+              placeholder="Insira uma URL para sua foto de perfil"
               disabled={!isEditing}
             />
           </Box>
@@ -236,29 +236,29 @@ class UserProfile extends React.Component<Props, State> {
           <Flex>
             <Box mr={1}>
               <Button type="default" onClick={this.handleCancel}>
-                Cancel
+                Cancelar
               </Button>
             </Box>
             <Box>
               <Button type="primary" onClick={this.handleUpdate}>
-                Save
+                Salvar
               </Button>
             </Box>
           </Flex>
         ) : (
           <Button type="primary" onClick={this.handleStartEditing}>
-            Edit
+            Editar
           </Button>
         )}
 
         <Divider />
 
-        <Title level={3}>Notification Settings</Title>
+        <Title level={3}>Configurações de Notificação</Title>
 
         <Box mb={3} sx={{maxWidth: 480}}>
           <Paragraph>
-            Choose how you would like to be alerted when your account receives
-            new messages from customers.
+            Escolha como você gostaria de ser alertado quando sua conta
+            recebesse novas mensagens de clientes.
           </Paragraph>
         </Box>
 
@@ -266,7 +266,7 @@ class UserProfile extends React.Component<Props, State> {
           checked={shouldEmailOnNewMessages}
           onChange={this.handleToggleEmailAlertSetting}
         >
-          Send email alert on new messages
+          Enviar email de alerta em nova mensagens
         </Checkbox>
       </Box>
     );

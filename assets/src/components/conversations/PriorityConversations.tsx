@@ -24,7 +24,7 @@ const PriorityConversations = () => {
   return (
     <ConversationsDashboard
       loading={loading}
-      title="Prioritized"
+      title="Com prioridades"
       account={account}
       conversationIds={priority}
       messagesByConversation={messagesByConversation}

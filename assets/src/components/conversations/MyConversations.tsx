@@ -27,7 +27,7 @@ const MyConversations = () => {
   return (
     <ConversationsDashboard
       loading={loading}
-      title="Assigned to me"
+      title="Atribuídas para mim"
       account={account}
       conversationIds={mine}
       messagesByConversation={messagesByConversation}

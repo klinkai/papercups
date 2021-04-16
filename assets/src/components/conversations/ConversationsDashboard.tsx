@@ -259,12 +259,12 @@ class ConversationsDashboard extends React.Component<Props, State> {
     await this.props.onUpdateConversation(conversationId, {status: 'open'});
 
     notification.open({
-      message: 'Conversation re-opened!',
+      message: 'Conversa reaberta!',
       duration: 2, // 2 seconds
       description: (
         <Box>
-          You can view this conversations once again{' '}
-          <a href="/conversations/all">here</a>.
+          Você pode ver essa conversa novamente{' '}
+          <a href="/conversations/all">clicando aqui</a>.
         </Box>
       ),
     });
@@ -277,12 +277,12 @@ class ConversationsDashboard extends React.Component<Props, State> {
     await this.props.onDeleteConversation(conversationId);
 
     notification.open({
-      message: 'Conversation deleted!',
+      message: 'Conversa apagada!',
       duration: 2, // 2 seconds
       description: (
         <Box>
-          This conversation was permanently deleted. You can view your active
-          conversations <a href="/conversations/all">here</a>.
+          Essa conversa foi apagada permanentemente. Você pode suas conversas
+          ativas <a href="/conversations/all">aqui</a>.
         </Box>
       ),
     });

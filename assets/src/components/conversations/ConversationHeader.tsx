@@ -178,7 +178,7 @@ const ConversationHeader = ({
                 marginTop: hasBothNameAndEmail ? 0 : 4,
               }}
             >
-              {name || email || 'Anonymous User'}
+              {name || email || 'Usuário Anônimo'}
             </Title>
           </Flex>
           {hasBothNameAndEmail && (
@@ -192,7 +192,7 @@ const ConversationHeader = ({
           <Box mx={1}>
             <Select
               style={{minWidth: 240}}
-              placeholder="No assignee"
+              placeholder="Não atribuído"
               value={assigneeId ? String(assigneeId) : undefined}
               onSelect={(userId) =>
                 onAssignUser(conversationId, String(userId))
@@ -214,14 +214,14 @@ const ConversationHeader = ({
           </Box>
           <Box mx={1}>
             {priority === 'priority' ? (
-              <Tooltip title="Remove priority" placement="bottomRight">
+              <Tooltip title="Remover prioridade" placement="bottomRight">
                 <Button
                   icon={<StarFilled style={{color: colors.gold}} />}
                   onClick={() => onRemovePriority(conversationId)}
                 />
               </Tooltip>
             ) : (
-              <Tooltip title="Mark as priority" placement="bottomRight">
+              <Tooltip title="Marca como prioridade" placement="bottomRight">
                 <Button
                   icon={<StarOutlined />}
                   onClick={() => onMarkPriority(conversationId)}
@@ -233,7 +233,7 @@ const ConversationHeader = ({
           {status === 'closed' ? (
             <Fragment>
               <Box mx={1}>
-                <Tooltip title="Reopen conversation" placement="bottomRight">
+                <Tooltip title="Reabrir conversa" placement="bottomRight">
                   <Button
                     icon={<UploadOutlined />}
                     onClick={() => onReopenConversation(conversationId)}
@@ -242,13 +242,13 @@ const ConversationHeader = ({
               </Box>
               <Box mx={1}>
                 <Popconfirm
-                  title="Are you sure you want to delete this conversation?"
-                  okText="Yes"
-                  cancelText="No"
+                  title="Você tem certeza que deseja apagar essa conversa?"
+                  okText="Sim"
+                  cancelText="Não"
                   placement="leftBottom"
                   onConfirm={() => onDeleteConversation(conversationId)}
                 >
-                  <Tooltip title="Delete conversation" placement="bottomRight">
+                  <Tooltip title="Apagar conversa" placement="bottomRight">
                     <Button icon={<DeleteOutlined />} />
                   </Tooltip>
                 </Popconfirm>
@@ -256,7 +256,7 @@ const ConversationHeader = ({
             </Fragment>
           ) : (
             <Box mx={1}>
-              <Tooltip title="Close conversation" placement="bottomRight">
+              <Tooltip title="Encerrar conversa" placement="bottomRight">
                 <Button
                   icon={<CheckOutlined />}
                   onClick={() => onCloseConversation(conversationId)}

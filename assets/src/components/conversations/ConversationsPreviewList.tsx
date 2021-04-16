@@ -104,7 +104,7 @@ const ConversationsPreviewList = ({
       ) : (
         <Box p={3}>
           <Text type="secondary">
-            {loading ? 'Loading...' : 'No conversations'}
+            {loading ? 'Carregando...' : 'Nenhuma conversa'}
           </Text>
         </Box>
       )}

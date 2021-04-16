@@ -186,7 +186,7 @@ export const SidebarCustomerTags = ({customerId}: {customerId: string}) => {
           <Select
             mode="tags"
             style={{width: '100%'}}
-            placeholder="Add tags"
+            placeholder="Adicionar tags"
             value={state.updated.map((t: TagOption) => t.value)}
             onChange={handleChangeTags}
             options={state.options.map((tag: T.Tag) => {
@@ -217,7 +217,7 @@ export const SidebarCustomerTags = ({customerId}: {customerId: string}) => {
                 );
               })
             ) : (
-              <Text type="secondary">None</Text>
+              <Text type="secondary">Nenhuma</Text>
             )}
           </Flex>
         )}
@@ -230,7 +230,7 @@ export const SidebarCustomerTags = ({customerId}: {customerId: string}) => {
             loading={state.updating}
             onClick={handleUpdateTags}
           >
-            Done
+            Salvar
           </Button>
         ) : (
           <Button
@@ -238,7 +238,7 @@ export const SidebarCustomerTags = ({customerId}: {customerId: string}) => {
             loading={state.updating}
             onClick={handleStartEditing}
           >
-            {state.current && state.current.length ? 'Edit' : 'Add'}
+            {state.current && state.current.length ? 'Editar' : 'Adicionar'}
           </Button>
         )}
       </Box>
@@ -346,7 +346,7 @@ export const SidebarConversationTags = ({
           <Select
             mode="tags"
             style={{width: '100%'}}
-            placeholder="Add tags"
+            placeholder="Adicionar tags"
             value={state.updated.map((t: TagOption) => t.value)}
             onChange={handleChangeTags}
             options={state.options.map((tag: T.Tag) => {
@@ -377,7 +377,7 @@ export const SidebarConversationTags = ({
                 );
               })
             ) : (
-              <Text type="secondary">None</Text>
+              <Text type="secondary">Nenhuma</Text>
             )}
           </Flex>
         )}
@@ -390,7 +390,7 @@ export const SidebarConversationTags = ({
             loading={state.updating}
             onClick={handleUpdateTags}
           >
-            Done
+            Salvar
           </Button>
         ) : (
           <Button
@@ -398,7 +398,7 @@ export const SidebarConversationTags = ({
             loading={state.updating}
             onClick={handleStartEditing}
           >
-            {state.current && state.current.length ? 'Edit' : 'Add'}
+            {state.current && state.current.length ? 'Editar' : 'Adicionar'}
           </Button>
         )}
       </Box>
