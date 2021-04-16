@@ -74,7 +74,7 @@ class Login extends React.Component<Props, State> {
         }}
       >
         <Box sx={{width: '100%', maxWidth: 320}}>
-          <Title level={1}>Welcome back</Title>
+          <Title level={1}>Bem-vindo de volta</Title>
 
           <form onSubmit={this.handleSubmit}>
             <Box mb={2}>
@@ -90,7 +90,7 @@ class Login extends React.Component<Props, State> {
             </Box>
 
             <Box mb={2}>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Senha</label>
               <Input
                 id="password"
                 size="large"
@@ -109,7 +109,7 @@ class Login extends React.Component<Props, State> {
                 htmlType="submit"
                 loading={loading}
               >
-                Log in
+                Entrar
               </Button>
             </Box>
 
@@ -124,7 +124,7 @@ class Login extends React.Component<Props, State> {
               <Link to={`/register${location.search}`}>Sign up!</Link>
             </Box>
             <Box my={3}>
-              <Link to="/reset-password">Forgot your password?</Link>
+              <Link to="/reset-password">Esqueceu sua senha?</Link>
             </Box>
           </form>
         </Box>
