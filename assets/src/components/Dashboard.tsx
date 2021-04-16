@@ -481,12 +481,12 @@ const Dashboard = (props: RouteComponentProps) => {
                 </Menu.Item>
               )}
               <Menu.Item
-                title="Log out"
+                title="Sair"
                 icon={<LogoutOutlined />}
                 key="logout"
                 onClick={logout}
               >
-                Log out
+                Sair
               </Menu.Item>
             </Menu>
           </Box>
