@@ -156,7 +156,7 @@ const ChatMessage = ({
         {shouldDisplayTimestamp && (
           <Flex m={1} sx={{justifyContent: 'flex-end'}}>
             {formattedSeenAt ? (
-              <Text type="secondary">Enviado {formattedSeenAt}</Text>
+              <Text type="secondary">Lido {formattedSeenAt}</Text>
             ) : (
               <Text type="secondary">Enviado {formattedSentAt}</Text>
             )}
