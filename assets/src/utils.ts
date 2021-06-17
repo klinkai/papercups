@@ -28,10 +28,8 @@ export const formatRelativeTime = (date: dayjs.Dayjs) => {
     return `${seconds} segundos atrás`;
   } else if (mins <= 60) {
     return `${mins} minuto${mins === 1 ? '' : 's'} atrás`;
-  } else if (hrs <= 24) {
-    return `${hrs} hora${hrs === 1 ? '' : 's'} atrás`;
   } else {
-    return `${days} dia${days === 1 ? '' : 's'} atrás`;
+    return date.format('DD/MM/YYYY hh:mm');
   }
 };
 
