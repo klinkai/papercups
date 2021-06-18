@@ -431,6 +431,11 @@ export class ConversationsProvider extends React.Component<Props, State> {
           },
         });
       });
+
+      /// TODO temp solution: update 'seen_at' user messages
+      this.channel.push('messages:read', {
+        conversation_id: conversationId,
+      });
   };
 
   handleNewConversation = async (conversationId?: string) => {

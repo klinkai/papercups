@@ -33,6 +33,12 @@ defmodule ChatApiWeb.NotificationChannel do
     {:reply, :ok, socket}
   end
 
+  def handle_in("messages:read", %{"conversation_id" => id}, socket) do
+    Conversations.mark_user_messages_as_seen(id)
+
+    {:noreply, socket}
+  end
+
   def handle_in("shout", payload, socket) do
     with %{current_user: current_user} <- socket.assigns,
          %{id: user_id, account_id: account_id} <- current_user do

@@ -357,6 +357,15 @@ defmodule ChatApi.Conversations do
     |> Repo.update_all(set: [seen_at: DateTime.utc_now()])
   end
 
+  @spec mark_user_messages_as_seen(binary) :: {integer(), nil | [term()]}
+  def mark_user_messages_as_seen(conversation_id) do
+    Message
+    |> where(conversation_id: ^conversation_id)
+    |> where([m], is_nil(m.seen_at))
+    |> where([m], not is_nil(m.customer_id))
+    |> Repo.update_all(set: [seen_at: DateTime.utc_now()])
+  end
+
   @spec has_unseen_messages?(binary()) :: boolean()
   def has_unseen_messages?(conversation_id) do
     query =
